@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <meta name="author" content="Shahir Rahman">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+  <title>Ampere's Law Simulation</title>
+
+  <!--  Styles  -->
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <!-- Header -->
+    <div id="header" class="row p-2">
+      <div class="col-sm-12">
+        <h3>Ampere's Law Simulation</h3>
+      </div>
+    </div>
+
+    <!-- 3d and 2d content -->
+    <div class="row fluid">
+      <div class="col-sm-8 p-3">
+        <div class="panel-border h-100">
+          <div id="three-container" class="h-100 w-100"></div>
+        </div>
+      </div>
+      <div class="col-sm-4 p-3">
+        <div class="panel-border h-100">
+          <canvas id="paper-container" class="h-100 w-100"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer" class="row p-3">
+      <div class="col-sm-12">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#instructionsModal">Instructions</button>
+        <button id="calcIBtn" type="button" class="btn btn-secondary" onclick="LabController.calcShow();" data-toggle="modal" data-target="#calcIModal">Show Calculation Steps</button>
+        <button id="measurementBtn" type="button" class="btn btn-secondary" onclick="LabController.measurementShow();" data-toggle="modal" data-target="#measurementModal">Show Measurements</button>
+        <button type="button" class="btn btn-secondary" onclick="LabController.toggleCurrent();">Show Current</button>
+        <button type="button" class="btn btn-secondary" onclick="LabController.toggleMagField();">Show Magnetic Field</button>
+        <button type="button" class="btn btn-success" onclick="controls.reset();">Home View</button>
+        <button type="button" class="btn btn-info" onclick="LabController.resetScenario();">Clear Scenario</button>
+        <span style="float:right;">By Shahir Rahman</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Calculate Current Modal -->
+  <div class="modal fade" id="calcIModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Calculation Steps</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div id="calcIModalBody" class="modal-body" align="center">
+          Click on a scenario in the controls panel. (Top right)
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Measurements Panel Modal -->
+  <div class="modal fade" id="measurementModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Measurements</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div id="measurementModalBody" class="modal-body" align="center">
+          Click on a scenario in the controls panel. (Top right)
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Instructions Modal -->
+  <div class="modal fade" id="instructionsModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Instructions</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+          <strong>IMPORTANT:</strong> Use this program only in fullscreen mode or with a large window size. Changing the window size will cause the program to crash. Refresh the page after resizing your window to ensure the program works.
+          <br><br> Open the controls panel on the top right. There you can select a scenario where you can practice using Ampere's law.
+          <br><br> The left panel has the 3d view of the wire. You can show the direction of the current and magnetic field by clicking on the button in the bottom of the screen. Click and drag in the 3d view to change the angle and scroll in order to
+          zoom. It is easier to navigate using a touchscreen.
+          <br><br> The right panel shows a 2d cross section of the wire. You can click and drag on the 2d panel to draw an Amperian loop. Use the control panel to change the settings on the amount of current, or the specific measurements for each scenario.
+          <br><br> Click the Show Measurements button to show measurements regarding the Amperian loop that you drew, or the physical wire.
+          <br><br> Use Ampere's law to calculate the magnetic field in your loop. If you need help or want to check your answers, click the Show Calculation Steps button.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.5/paper-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.1/dat.gui.min.js"></script>
+  <link rel="stylesheet" href="styles/dat-gui-new.css">
+
+  <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://threejs.org/examples/js/Detector.js"></script>
+  <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+
+  <script src="scripts/3d-view.js"></script>
+  <script src="scripts/2d-view.js"></script>
+  <script src="scripts/images.js"></script>
+  <script src="scripts/scenario-a.js"></script>
+  <script src="scripts/scenario-b.js"></script>
+  <script src="scripts/scenario-c.js"></script>
+  <script src="scripts/controls.js"></script>
+
+</body>
+
+</html>
