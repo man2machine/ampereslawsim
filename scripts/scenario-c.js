@@ -1,7 +1,7 @@
 // Coaxial wire
 var ScenarioC = {
   innerCurrent: 0.5,
-  outerCurrent: 0.5,
+  outerCurrent: 2.5,
 
   wireLength3d: 300,
   wireOuterRadius3d: 50,
@@ -111,11 +111,11 @@ var ScenarioC = {
 
     this.drawWireCrossSection();
 
-    var controller = datControls.add(this, "innerCurrent", 0.1, 5, 0.1);
+    var controller = datControls.add(this, "innerCurrent", 0.1, 2, 0.1);
     controller.name("Inner Wire Current");
     this.addedControls.push(controller);
 
-    controller = datControls.add(this, "outerCurrent", 0.1, 5, 0.1);
+    controller = datControls.add(this, "outerCurrent", 2.1, 5, 0.1);
     controller.name("Outer Wire Current");
     this.addedControls.push(controller);
 
