@@ -111,15 +111,15 @@ var ScenarioC = {
 
     this.drawWireCrossSection();
 
-    var controller = datControls.add(this, "innerCurrent", 0.01, 5);
+    var controller = datControls.add(this, "innerCurrent", 0.1, 5, 0.1);
     controller.name("Inner Wire Current");
     this.addedControls.push(controller);
 
-    controller = datControls.add(this, "outerCurrent", 0.01, 5);
+    controller = datControls.add(this, "outerCurrent", 0.1, 5, 0.1);
     controller.name("Outer Wire Current");
     this.addedControls.push(controller);
 
-    controller = datControls.add(this, "wireOuterRadiusSet", 0.1, 10);
+    controller = datControls.add(this, "wireOuterRadiusSet", 0.1, 10, 0.1);
     controller.name("Outer Wire Radius");
     this.addedControls.push(controller);
 

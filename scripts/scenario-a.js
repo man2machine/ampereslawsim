@@ -101,7 +101,7 @@ var ScenarioA = {
 
     this.drawWireCrossSection();
 
-    var controller = datControls.add(this, "current", 0.01, 5);
+    var controller = datControls.add(this, "current", 0.1, 5, 0.1);
     controller.name("Current");
     this.addedControls.push(controller);
 
