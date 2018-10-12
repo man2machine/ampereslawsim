@@ -13,7 +13,7 @@ var stayObjs = [];
 init();
 animate();
 
-$(window).on("load", onWindowResize);
+$(window).on("load", onWindowResizeThree);
 
 // Initialize
 function init() {
@@ -71,7 +71,8 @@ function init() {
   container.appendChild(renderer.domElement);
 
   // adding resize function
-  window.addEventListener("resize", onWindowResize, false);
+  //window.addEventListener("resize", onWindowResize, false);
+  $(document).ready(onWindowResizeThree);
 }
 
 function clearScene() {
@@ -88,10 +89,10 @@ function clearScene() {
   }
 }
 
-function onWindowResize() {
-  renderer.setSize(10, 10);
-  var width = $("#three-container").width();
-  var height = $("#three-container").outerHeight();
+function onWindowResizeThree() {
+  //renderer.setSize(10, 10);
+  var width = $("#three-container").width() - 20;
+  var height = $("#three-container").height() - 20;
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
   renderer.setSize(width, height);

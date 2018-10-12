@@ -45,12 +45,12 @@ function clearDrawing() {
   paper.view.draw();
 }
 
-function onWindowResize() {
+function onWindowResizePaper() {
   var width = (canvas.width = $("#paper-container").width());
   var height = (canvas.height = $("#paper-container").height());
   paper.view.viewSize = new paper.Size(width, height);
   paper.view.draw();
 }
 
-$(window).on("load", onWindowResize);
-window.addEventListener("resize", onWindowResize, false);
+$(window).on("load", onWindowResizePaper);
+window.addEventListener("resize", onWindowResizePaper, false);
