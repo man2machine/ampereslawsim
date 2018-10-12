@@ -1,6 +1,6 @@
 .dg {
   color: black;
-  font: 400 14px Verdana, Arial, sans-serif;
+  font: 400 15px "Segoe UI", Verdana, Arial, sans-serif;
   text-shadow: white 0 0 0;
 }
 .dg .c .slider {
@@ -108,7 +108,7 @@
     linear,
     left top,
     left bottom,
-    color-stop(34%, #bbbbbb),
+    color-stop(14%, #bbbbbb),
     color-stop(71%, #777777)
   );
   background-color: #cccccc;

@@ -558,7 +558,7 @@ var ScenarioA = {
       crossWireInsideLeft ^ crossWireInsideRight
     ) {
       $("#calcIModalBody").html(
-        "Please draw an Amperian loop with a uniform intermal magnetic field"
+        "Please draw an Amperian loop which along each part has uniform magnetic field"
       );
       return;
     }

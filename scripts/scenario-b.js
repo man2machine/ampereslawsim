@@ -327,7 +327,7 @@ var ScenarioB = {
       var c = Math.pow(Math.abs(this.pathRadius) + this.wireRadius2d, 2);
       if (b < c) {
         $("#calcIModalBody").html(
-          "Please draw an Amperian loop with a uniform internal magnetic field"
+          "Please draw an Amperian loop which along each part has uniform magnetic field"
         );
         return;
       } else {

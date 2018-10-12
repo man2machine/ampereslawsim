@@ -44,8 +44,10 @@
     <div id="footer" class="row p-3">
       <div class="col-sm-12">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#instructionsModal">Instructions</button>
-        <button id="calcIBtn" type="button" class="btn btn-secondary" onclick="LabController.calcShow();" data-toggle="modal" data-target="#calcIModal">Show Calculation Steps</button>
-        <button id="measurementBtn" type="button" class="btn btn-secondary" onclick="LabController.measurementShow();" data-toggle="modal" data-target="#measurementModal">Show Measurements</button>
+        <button id="calcIBtn" type="button" class="btn btn-secondary" onclick="LabController.calcShow();" data-toggle="modal"
+          data-target="#calcIModal">Show Calculation Steps</button>
+        <button id="measurementBtn" type="button" class="btn btn-secondary" onclick="LabController.measurementShow();"
+          data-toggle="modal" data-target="#measurementModal">Show Measurements</button>
         <button type="button" class="btn btn-secondary" onclick="LabController.toggleCurrent();">Show Current</button>
         <button type="button" class="btn btn-secondary" onclick="LabController.toggleMagField();">Show Magnetic Field</button>
         <button type="button" class="btn btn-success" onclick="controls.reset();">Home View</button>
@@ -63,8 +65,8 @@
         <div class="modal-header">
           <h5 class="modal-title">Calculation Steps</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
         <div id="calcIModalBody" class="modal-body" align="center">
           Click on a scenario in the controls panel. (Top right)
@@ -83,8 +85,8 @@
         <div class="modal-header">
           <h5 class="modal-title">Measurements</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
         <div id="measurementModalBody" class="modal-body" align="center">
           Click on a scenario in the controls panel. (Top right)
@@ -103,17 +105,26 @@
         <div class="modal-header">
           <h5 class="modal-title">Instructions</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
         <div class="modal-body">
-          <strong>IMPORTANT:</strong> Use this program only in fullscreen mode or with a large window size. Changing the window size will cause the program to crash. Refresh the page after resizing your window to ensure the program works.
-          <br><br> Open the controls panel on the top right. There you can select a scenario where you can practice using Ampere's law.
-          <br><br> The left panel has the 3d view of the wire. You can show the direction of the current and magnetic field by clicking on the button in the bottom of the screen. Click and drag in the 3d view to change the angle and scroll in order to
+          <strong>IMPORTANT:</strong> Use this program only in fullscreen mode or with a large window size. Changing
+          the window size will cause the program to crash. Refresh the page after resizing your window to ensure the
+          program works.
+          <br><br> Open the controls panel on the top right. There you can select a scenario where you can practice
+          using Ampere's law.
+          <br><br> The left panel has the 3d view of the wire. You can show the direction of the current and magnetic
+          field by clicking on the button in the bottom of the screen. Click and drag in the 3d view to change the
+          angle and scroll in order to
           zoom. It is easier to navigate using a touchscreen.
-          <br><br> The right panel shows a 2d cross section of the wire. You can click and drag on the 2d panel to draw an Amperian loop. Use the control panel to change the settings on the amount of current, or the specific measurements for each scenario.
-          <br><br> Click the Show Measurements button to show measurements regarding the Amperian loop that you drew, or the physical wire.
-          <br><br> Use Ampere's law to calculate the magnetic field in your loop. If you need help or want to check your answers, click the Show Calculation Steps button.
+          <br><br> The right panel shows a 2d cross section of the wire. You can click and drag on the 2d panel to draw
+          an Amperian loop. Use the control panel to change the settings on the amount of current, or the specific
+          measurements for each scenario.
+          <br><br> Click the Show Measurements button to show measurements regarding the Amperian loop that you drew,
+          or the physical wire.
+          <br><br> Use Ampere's law to calculate the magnetic field in your loop. If you need help or want to check
+          your answers, click the Show Calculation Steps button.
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

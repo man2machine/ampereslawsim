@@ -26,7 +26,7 @@ var ScenarioC = {
   wireOuterRadiusSet: 1,
   addedControls: [],
 
-  reset: function() {
+  reset: function () {
     clearScene();
 
     this.wireRadius = null;
@@ -50,13 +50,13 @@ var ScenarioC = {
     this.addedControls = [];
   },
 
-  init: function() {
+  init: function () {
     this.addWire();
 
     // adding Amperian loop path and tool
     var tool = new paper.Tool();
 
-    tool.onMouseDown = function(event) {
+    tool.onMouseDown = function (event) {
       if (this.path != null) {
         this.path.remove();
       }
@@ -69,7 +69,7 @@ var ScenarioC = {
       var centery2d = paper.view.viewSize.height / 2;
       if (
         Math.pow(this.startPoint.x - centerx2d, 2) +
-          Math.pow(this.startPoint.y - centery2d, 2) <
+        Math.pow(this.startPoint.y - centery2d, 2) <
         Math.pow(this.wireInnerRadius2d, 2)
       ) {
         this.startPoint = new paper.Point(centerx2d, centery2d);
@@ -84,12 +84,12 @@ var ScenarioC = {
       this.path.strokeWidth = 5;
     }.bind(this);
 
-    tool.onMouseDrag = function(event) {
+    tool.onMouseDrag = function (event) {
       this.path.remove();
       this.endPoint = event.point;
       this.pathRadius = Math.pow(
         Math.pow(this.endPoint.x - this.startPoint.x, 2) +
-          Math.pow(this.endPoint.y - this.startPoint.y, 2),
+        Math.pow(this.endPoint.y - this.startPoint.y, 2),
         0.5
       );
       var minDim =
@@ -103,7 +103,7 @@ var ScenarioC = {
       this.path.strokeWidth = 5;
     }.bind(this);
 
-    tool.onMouseUp = function(event) {
+    tool.onMouseUp = function (event) {
       this.drawAmperianLoop();
     }.bind(this);
 
@@ -171,7 +171,7 @@ var ScenarioC = {
     drawWire2d(centerx2d, centery2d, this.wireInnerRadius2d, false);
   },
 
-  addWire: function() {
+  addWire: function () {
     var wireMaterial = new THREE.MeshPhongMaterial({
       color: 0xddddbb,
       specular: 0x111111,
@@ -234,7 +234,7 @@ var ScenarioC = {
     this.wire = wire;
   },
 
-  drawCurrent: function() {
+  drawCurrent: function () {
     this.wire.material.opacity = 0.5;
     this.wire.material.transparent = true;
 
@@ -293,7 +293,7 @@ var ScenarioC = {
     this.currentShow = true;
   },
 
-  removeCurrent: function() {
+  removeCurrent: function () {
     for (var i = 0; i < this.currentLineObjs.length; i++) {
       scene.remove(this.currentLineObjs[i]);
     }
@@ -303,7 +303,7 @@ var ScenarioC = {
     this.wire.material.transparent = false;
   },
 
-  toggleCurrent: function() {
+  toggleCurrent: function () {
     if (this.currentShow) {
       this.removeCurrent();
     } else {
@@ -311,7 +311,7 @@ var ScenarioC = {
     }
   },
 
-  drawMagField: function() {
+  drawMagField: function () {
     var numFieldRings = 6;
     var numLineLvls = 2;
     var numLineArcs = 6;
@@ -396,7 +396,7 @@ var ScenarioC = {
     this.magFieldShow = true;
   },
 
-  removeMagField: function() {
+  removeMagField: function () {
     for (var i = 0; i < this.magFieldLineObjs.length; i++) {
       scene.remove(this.magFieldLineObjs[i]);
     }
@@ -404,7 +404,7 @@ var ScenarioC = {
     this.magFieldShow = false;
   },
 
-  toggleMagField: function() {
+  toggleMagField: function () {
     if (this.magFieldShow) {
       this.removeMagField();
     } else {
@@ -412,7 +412,7 @@ var ScenarioC = {
     }
   },
 
-  drawAmperianLoop: function() {
+  drawAmperianLoop: function () {
     if (this.loop != null) {
       scene.remove(this.loop);
     }
@@ -451,7 +451,7 @@ var ScenarioC = {
     this.loop = loop;
   },
 
-  calcShow: function() {
+  calcShow: function () {
     if (this.path == null) {
       $("#calcIModalBody").html("Please draw an Amperian loop");
       return;
@@ -473,7 +473,7 @@ var ScenarioC = {
         var c = Math.pow(Math.abs(this.pathRadius) + radii[i], 2);
         if (b < c) {
           $("#calcIModalBody").html(
-            "Please draw an Amperian loop with a uniform internal magnetic field"
+            "Please draw an Amperian loop which along each part has uniform magnetic field"
           );
           return;
         }
@@ -572,7 +572,7 @@ var ScenarioC = {
     MathJax.Hub.Queue(["Typeset", MathJax.Hub, $("#calcIModalBody").get(0)]);
   },
 
-  measurementShow: function() {
+  measurementShow: function () {
     var I = this.current;
     var loopRadius = Math.abs(
       this.wireOuterRadiusSet / this.wireOuterRadius2d * this.pathRadius
