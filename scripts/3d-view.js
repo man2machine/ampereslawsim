@@ -8,7 +8,7 @@ var container = document.getElementById("three-container");
 
 var stayObjs = [];
 
-if (!Detector.webgl) Detector.addGetWebGLMessage();
+// if (!Detector.webgl) Detector.addGetWebGLMessage();
 
 init();
 animate();
