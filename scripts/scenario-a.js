@@ -598,7 +598,7 @@ var ScenarioA = {
     var html = "Amperes Law Equation:\r\n$$\\oint {B \\cdot d \\ell = \\mu_0 I }$$";
     html += '<img src="' + img + '" height="300">';
     html +=
-      "$$\\oint {B \\cdot d \\ell} = \\sum B_{||}\\ell = ({B_{||}\\ell})_{ab} + ({B_{||}\\ell})_{bc} + ({B_{||}\\ell})_{cd} + ({B_{||}\\ell})_{da}$$";
+      "$$\\oint {B \\cdot d \\ell} = \\sum B_{||}\\Delta\\ell = ({B_{||}\\ell})_{ab} + ({B_{||}\\ell})_{bc} + ({B_{||}\\ell})_{cd} + ({B_{||}\\ell})_{da}$$";
     html += "$$= B L +0+0+0 = \\mu_0 I_{\\text{enclosed}}$$";
     html += "$$I_{\\text{enclosed}} = N I$$";
     html += "$$\\text{L = length of amperian loop, N = number of turns}$$";
