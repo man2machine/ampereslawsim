@@ -171,7 +171,7 @@ var ScenarioA = {
     const r2 = h / (this.numLoopsSolenoid - 0.5) / 2 - 0.2;
     this.wireRadius3d = r2;
     const ystart = -this.wireSize3d[1];
-    const divisions = [2000, 16];
+    const divisions = [2000, 20];
 
     for (var i = 0; i <= divisions[0]; i++) {
       var t =

@@ -196,9 +196,10 @@ var ScenarioC = {
     outerCircle.holes.push(innerCircle);
 
     var extrudeSettings = {
+      curveSegments: 32,
       steps: 1,
       amount: this.wireLength3d,
-      bevelEnabled: true,
+      bevelEnabled: false,
       bevelThickness: 0,
       bevelSize: 0,
       bevelSegments: 1
