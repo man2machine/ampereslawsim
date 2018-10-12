@@ -333,10 +333,10 @@ var ScenarioB = {
       } else {
         var img = ScenBCEmpty;
         var html =
-          "Amperes Law Equation:\r\n$$\\oint {B d \\ell = \\mu_0 I }$$";
+          "Amperes Law Equation:\r\n$$\\oint {B \\cdot d \\ell = \\mu_0 I }$$";
         html += '<img src="' + img + '" height="175">';
         html +=
-          "$$\\oint {B d \\ell} = \\mu_0 I_{\\text{enclosed}} = \\mu_0 * 0 = 0$$";
+          "$$\\oint {B \\cdot d \\ell} = \\mu_0 I_{\\text{enclosed}} = \\mu_0 * 0 = 0$$";
         html += "$$B = 0$$";
         $("#calcIModalBody").html(html);
         MathJax.Hub.Queue([
@@ -352,12 +352,12 @@ var ScenarioB = {
       this.wireRadiusSet / this.wireRadius2d * this.pathRadius
     );
 
-    var html = "Amperes Law Equation:\r\n$$\\oint {B d \\ell = \\mu_0 I }$$";
+    var html = "Amperes Law Equation:\r\n$$\\oint {B \\cdot d \\ell = \\mu_0 I }$$";
     if (Math.abs(this.pathRadius) > this.wireRadius2d) {
       var img = ScenBCOutside;
       html += '<img src="' + img + '" height="300">';
       html +=
-        "$$\\oint {B d \\ell} = B (2 \\pi r) = \\mu_0 I_{\\text{enclosed}}$$";
+        "$$\\oint {B \\cdot d \\ell} = B (2 \\pi r) = \\mu_0 I_{\\text{enclosed}}$$";
       html += "$$B = \\frac{\\mu_0 I}{2 \\pi r}$$";
       var r = loopRadius;
       var I = this.current;
@@ -369,7 +369,7 @@ var ScenarioB = {
       var img = ScenBCInside;
       html += '<img src="' + img + '" width="300">';
       html +=
-        "$$\\oint {B d \\ell} = B (2 \\pi r) = \\mu_0 I_{\\text{enclosed}}$$";
+        "$$\\oint {B \\cdot d \\ell} = B (2 \\pi r) = \\mu_0 I_{\\text{enclosed}}$$";
       html += "$$B = \\frac{\\mu_0 I_{\\text{enclosed}}}{2 \\pi r}$$";
       html += "The current enclosed is proportional to the area in the loop";
       html +=

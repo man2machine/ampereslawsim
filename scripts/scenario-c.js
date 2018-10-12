@@ -480,10 +480,10 @@ var ScenarioC = {
       }
 
       var img = ScenBCEmpty;
-      var html = "Amperes Law Equation:\r\n$$\\oint {B d \\ell = \\mu_0 I }$$";
+      var html = "Amperes Law Equation:\r\n$$\\oint {B \\cdot d \\ell = \\mu_0 I }$$";
       html += '<img src="' + img + '" height="175">';
       html +=
-        "$$\\oint {B d \\ell} = \\mu_0 I_{\\text{enclosed}} = \\mu_0 * 0 = 0$$";
+        "$$\\oint {B \\cdot d \\ell} = \\mu_0 I_{\\text{enclosed}} = \\mu_0 * 0 = 0$$";
       html += "$$B = 0$$";
       $("#calcIModalBody").html(html);
       MathJax.Hub.Queue(["Typeset", MathJax.Hub, $("#calcIModalBody").get(0)]);
@@ -494,12 +494,12 @@ var ScenarioC = {
       this.wireOuterRadiusSet / this.wireOuterRadius2d * this.pathRadius
     );
 
-    var html = "Amperes Law Equation:\r\n$$\\oint {B d \\ell = \\mu_0 I }$$";
+    var html = "Amperes Law Equation:\r\n$$\\oint {B \\cdot d \\ell = \\mu_0 I }$$";
     if (this.pathRadius < radii[2]) {
       var img = ScenBCInside;
       html += '<img src="' + img + '" width="300">';
       html +=
-        "$$\\oint {B d \\ell} = B (2 \\pi r) = \\mu_0 I_{\\text{enclosed}}$$";
+        "$$\\oint {B \\cdot d \\ell} = B (2 \\pi r) = \\mu_0 I_{\\text{enclosed}}$$";
       html += "$$B = \\frac{\\mu_0 I_{\\text{enclosed}}}{2 \\pi r}$$";
       html += "The current enclosed is proportional to the area in the loop";
       html +=
@@ -518,7 +518,7 @@ var ScenarioC = {
       var img = ScenBCOutside;
       html += '<img src="' + img + '" height="300">';
       html +=
-        "$$\\oint {B d \\ell} = B (2 \\pi r) = \\mu_0 I_{\\text{enclosed}}$$";
+        "$$\\oint {B \\cdot d \\ell} = B (2 \\pi r) = \\mu_0 I_{\\text{enclosed}}$$";
       html += "$$B = \\frac{\\mu_0 I}{2 \\pi r}$$";
       var r = loopRadius;
       var I = this.innerCurrent;
@@ -530,7 +530,7 @@ var ScenarioC = {
       var img = ScenCRingInside;
       html += '<img src="' + img + '" height="300">';
       html +=
-        "$$\\oint {B d \\ell} = B (2 \\pi r) = \\mu_0 I_{\\text{enclosed}}$$";
+        "$$\\oint {B \\cdot d \\ell} = B (2 \\pi r) = \\mu_0 I_{\\text{enclosed}}$$";
       html +=
         "$$I_{\\text{enclosed}} = I_{\\text{inner wire}} - I_{\\text{outer wire}}$$";
       html +=
@@ -555,7 +555,7 @@ var ScenarioC = {
       var img = ScenCRingOutside;
       html += '<img src="' + img + '" height="300">';
       html +=
-        "$$\\oint {B d \\ell} = B (2 \\pi r) = \\mu_0 I_{\\text{enclosed}}$$";
+        "$$\\oint {B \\cdot d \\ell} = B (2 \\pi r) = \\mu_0 I_{\\text{enclosed}}$$";
       html +=
         "$$I_{\\text{enclosed}} = I_{\\text{inner wire}} - I_{\\text{outer wire}}$$";
       var r = loopRadius;
