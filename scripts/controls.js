@@ -61,4 +61,5 @@ f1.add(LabController, "scenarioB").name("Long Wire");
 f1.add(LabController, "scenarioC").name("Coaxial Wire");
 f1.add(LabController, "clearScenario").name("Clear Scenario");
 f1.open();
-datControls.close();
+datControls.open();
+LabController.scenarioA();
