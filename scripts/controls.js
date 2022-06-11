@@ -62,4 +62,4 @@ f1.add(LabController, "scenarioC").name("Coaxial Wire");
 f1.add(LabController, "clearScenario").name("Clear Scenario");
 f1.open();
 datControls.open();
-LabController.scenarioA();
+$(document).ready(function () {LabController.scenarioA();});
