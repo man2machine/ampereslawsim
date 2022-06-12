@@ -52,5 +52,5 @@ function onWindowResizePaper() {
   paper.view.draw();
 }
 
-$(window).on("load", onWindowResizePaper);
+// $(window).on("load", onWindowResizePaper);
 window.addEventListener("resize", onWindowResizePaper, false);
